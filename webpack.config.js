@@ -22,4 +22,10 @@ module.exports = {
       },
     ],
   },
+  devServer: {
+    contentBase: './dist',
+  },
+  output: {
+    filename: 'app.js',
+  },
 };

@@ -28,7 +28,7 @@ const doc = '<!doctype html>' + ReactDOM.renderToStaticMarkup(
 
 if (typeof document === 'undefined') {
   const fs = require(/* webpackIgnore: true */ 'fs');
-  fs.writeFileSync('index.html', doc);
+  fs.writeFileSync('./dist/index.html', doc);
 } else {
   hydrate(<App/>, document.getElementById('app'));
 }
