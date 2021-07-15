@@ -5,7 +5,8 @@
   "license": "MIT",
   "scripts": {
     "start": "webpack serve --open",
-    "build": "webpack --config webpack.config.js"
+    "build": "webpack --config webpack.config.js",
+    "build:all": "webpack --config webpack.config.js && ./node_modules/.bin/babel src --out-dir lib && node ./lib/ && mv dist/main.js app.js"
   },
   "dependencies": {
     "@babel/preset-react": "^7.14.5",

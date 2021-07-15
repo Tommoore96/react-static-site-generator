@@ -1,5 +1,10 @@
 module.exports = {
   module: {
+    parser: {
+      javascript: {
+        commonjsMagicComments: true,
+      },
+    },
     rules: [
       {
         test: /\.css$/i,

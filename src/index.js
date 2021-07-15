@@ -8,7 +8,7 @@ const Html = props => {
   return (
     <html lang='en'>
       <head>
-        <title>App</title>
+        <title>App 2</title>
         <link rel='stylesheet' href='/app.css' />
       </head>
       <body>
@@ -26,6 +26,11 @@ const doc = '<!doctype html>' + ReactDOM.renderToStaticMarkup(
 );
 
 
-hydrate(<App/>, document.getElementById('app'));
+if (typeof document === 'undefined') {
+  const fs = require(/* webpackIgnore: true */ 'fs');
+  fs.writeFileSync('index.html', doc);
+} else {
+  hydrate(<App/>, document.getElementById('app'));
+}
 
 console.log(`File written: ${process.cwd()}/index.html`);
